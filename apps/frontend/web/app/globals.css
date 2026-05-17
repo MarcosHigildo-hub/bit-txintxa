@@ -1,26 +1,137 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
+
+  --background: #f3efeb;
   --foreground: #171717;
+
+
+  --color-primary: #FF6A00;
+  --color-cream: #FFEAA8;
+  --color-navy: #0A2137;
+  --color-soft: #4D8AFF;
+  --color-dark: #050505;
+
+
+  --radius-xl: 36px;
+
+
+  --shadow-orange:
+    0 0 60px rgba(255, 106, 0, 0.4);
+
+  --shadow-card:
+    0 10px 40px rgba(0, 0, 0, 0.08);
+
+
+  --glass-bg: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(255, 255, 255, 0.08);
+
+
+  --font-sans:
+    "Inter",
+    Arial,
+    Helvetica,
+    sans-serif;
 }
+
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+
+  --color-primary: var(--color-primary);
+  --color-cream: var(--color-cream);
+  --color-navy: var(--color-navy);
+  --color-soft: var(--color-soft);
+
+  --font-sans: var(--font-sans);
+
+  --radius-xl: var(--radius-xl);
+
+  --shadow-orange: var(--shadow-orange);
+  --shadow-card: var(--shadow-card);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+
+
+.dark {
+  --background: #050505;
+  --foreground: #ededed;
+
+  --glass-bg: rgba(255, 255, 255, 0.04);
+  --glass-border: rgba(255, 255, 255, 0.06);
+}
+
+
+
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
+  background:
+    radial-gradient(
+      circle at bottom left,
+      rgba(255, 106, 0, 0.08),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at top right,
+      rgba(255, 106, 0, 0.04),
+      transparent 25%
+    ),
+    var(--background);
+
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+
+  font-family: var(--font-sans);
+
+  overflow-x: hidden;
+
+  transition:
+    background 0.4s ease,
+    color 0.4s ease;
+}
+
+
+
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+}
+
+.orange-glow {
+  box-shadow: var(--shadow-orange);
+}
+
+.card-shadow {
+  box-shadow: var(--shadow-card);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 106, 0, 0.4);
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 106, 0, 0.7);
+}
+
+::selection {
+  background: var(--color-primary);
+  color: white;
 }
