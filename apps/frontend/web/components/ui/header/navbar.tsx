@@ -9,30 +9,25 @@ import { useState } from "react";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
-  const t = useTranslations("navlinks");
+  const n = useTranslations("navegation");
 
   return (
     <nav className=" ">
-      <div className="hidden md:flex items-center gap-8  text-neutral-400">
+      <div className="hidden items-center gap-5 py-2 px-4 rounded-full bg-gray-600/20 text-sm text-black/60 dark:text-white/60 md:flex">
         <Link
-          className="transition-colors duration-200 hover:text-[#ff6a00c4] focus:text-[#FF6A00] focus:font-semibold"
-          href="/#"
+          className="transition hover:text-[#ff6a00c4] focus:text-[#FF6A00] focus:font-semibold"
+          href="/sell-btc"
         >
-          {t("howitworks")}
+          {n("sellbtc")}
         </Link>
 
-        <Link
-          className="transition-colors duration-200 hover:text-[#ff6a00c4] focus:text-[#FF6A00] focus:font-semibold"
-          href="/#"
-        >
-          {t("security")}
-        </Link>
+        <span className="h-6 w-px bg-gray-500 block"></span>
 
         <Link
-          className="transition-colors duration-200 hover:text-[#ff6a00c4] focus:text-[#FF6A00] focus:font-semibold"
-          href="/#"
+          className="transition hover:text-[#ff6a00c4] focus:text-[#FF6A00] focus:font-semibold"
+          href="/buy-btc"
         >
-          {t("gitHub")}
+          {n("buybtc")}
         </Link>
       </div>
 
@@ -56,39 +51,18 @@ export default function Navbar() {
           </div>
 
           <div className="items-center space-y-10 mt-8 py-4 px-4 text-md text-neutral-400 flex flex-col">
-            {/* <Link
-            className="transition hover:text-[#ff6a00c4] focus:text-[#FF6A00] focus:font-semibold"
-            href="/sell-btc"
-          >
-            {t('sellbtc')}
-          </Link>
-
-          <Link
-            className="transition hover:text-[#ff6a00c4] focus:text-[#FF6A00] focus:font-semibold"
-            href="/buy-btc"
-          >
-            {t('buybtc')}
-          </Link> */}
-
             <Link
-              className="transition-colors duration-200 hover:text-[#ff6a00c4] focus:text-[#FF6A00] focus:font-semibold"
-              href="/#"
+              className="transition hover:text-[#ff6a00c4] focus:text-[#FF6A00] focus:font-semibold"
+              href="/sell-btc"
             >
-              {t("howitworks")}
+              {n("sellbtc")}
             </Link>
 
             <Link
-              className="transition-colors duration-200 hover:text-[#ff6a00c4] focus:text-[#FF6A00] focus:font-semibold"
-              href="/#"
+              className="transition hover:text-[#ff6a00c4] focus:text-[#FF6A00] focus:font-semibold"
+              href="/buy-btc"
             >
-              {t("security")}
-            </Link>
-
-            <Link
-              className="transition-colors duration-200 hover:text-[#ff6a00c4] focus:text-[#FF6A00] focus:font-semibold"
-              href="/#"
-            >
-              {t("gitHub")}
+              {n("buybtc")}
             </Link>
           </div>
 
